@@ -5,13 +5,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Features
 
 Example Components imported via lazy loaded modules
+
 Example Http service should cover most use cases
+
 Example Login and Logout service plus boot controller
+
 Example Resolver
+
 Example Dialog
+
 Example unit tests
+
 Example cypress tests
+
 SCSS enabled
+
 Destroys observables during ngOnDestoy lifecycle call - Use `.pipe(takeUntil())`
 
 ## Development server
