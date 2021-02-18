@@ -1,0 +1,11 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+  <span>{{ message }}</span>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <button mat-raised-button color="accent" (click)="refresh()">
+      Stay logged in
+    </button>
+    <button mat-raised-button color="accent" (click)="logout()">
+      Log out now
+    </button>
+  </div>
+</div>

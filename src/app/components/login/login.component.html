@@ -1,0 +1,67 @@
+<div fxLayout="column" fxLayoutAlign="center center" class="bgc-grey hw100">
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    class="hw100"
+    [formGroup]="loginForm"
+    (ngSubmit)="login()"
+  >
+    <div class="bgc-white">
+      <div class="mat-elevation-z4 p20 bgc-white" fxLayout="column">
+        <div fxLayout="column" fxLayoutGap="20px">
+          <h2>Login</h2>
+          <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input
+              matInput
+              id="username"
+              name="username"
+              type="text"
+              formControlName="username"
+              [errorStateMatcher]="matcher"
+              placeholder="username"
+              autocomplete="username"
+            />
+            <mat-hint>Enter your username</mat-hint>
+            <mat-error *ngIf="!loginForm['username']?.hasError('required')">
+              Please enter a valid username
+            </mat-error>
+            <mat-error *ngIf="loginForm['username']?.hasError('required')">
+              Username is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              id="password"
+              name="password"
+              type="password"
+              formControlName="password"
+              [errorStateMatcher]="matcher"
+              placeholder="password"
+              autocomplete="current-password"
+            />
+            <mat-hint>Enter your password</mat-hint>
+            <mat-error *ngIf="!loginForm['password']?.hasError('required')">
+              Please enter a valid password
+            </mat-error>
+            <mat-error *ngIf="loginForm['password']?.hasError('required')">
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <button
+            id="login"
+            type="submit"
+            mat-raised-button
+            color="accent"
+            class="w100"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
