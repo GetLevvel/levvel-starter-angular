@@ -1,5 +1,6 @@
 import { PreloadAllModules, Routes, RouterModule } from '@angular/router';
 import { AppGuard } from './app.guard';
+import { HomeGetDataResolver } from './components/home/home-get-data.resolver';
 import { LoginGuard } from './components/login/login.guard';
 
 const appRoutes: Routes = [
@@ -7,6 +8,9 @@ const appRoutes: Routes = [
     path: '',
     loadChildren: () =>
       import('./components/home/home.module').then((m) => m.HomeModule),
+    resolve: {
+      data: HomeGetDataResolver,
+    },
     pathMatch: 'full',
     canActivate: [AppGuard],
   },

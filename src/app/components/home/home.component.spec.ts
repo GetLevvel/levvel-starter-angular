@@ -2,11 +2,14 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   beforeEach(async(() => {
+    const metaStub = () => ({ updateTag: (object) => ({}) });
+    const titleStub = () => ({ setTitle: (string) => ({}) });
     const activatedRouteStub = () => ({
       data: { pipe: () => ({ subscribe: (f) => f({}) }) },
     });
@@ -25,6 +28,8 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
       providers: [
+        { provide: Meta, useFactory: metaStub },
+        { provide: Title, useFactory: titleStub },
         { provide: ActivatedRoute, useFactory: activatedRouteStub },
         { provide: MatDialog, useFactory: matDialogStub },
         {

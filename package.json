@@ -14,7 +14,7 @@
     "cypress:ci": "concurrently \"wait-on https://localhost:5001 && npm run cypress:runner && npm run killserver\" \"npm run start\"",
     "cypress:runner": "npm run cypress:run || npm run killservererror",
     "killserver": "wmic process where \"name='dotnet.exe'\" delete",
-    "killservererror": "npm run killdotnet && exit 1",
+    "killservererror": "npm run killserver && exit 1",
     "prettier": "prettier --write .",
     "e2e": "ng e2e"
   },

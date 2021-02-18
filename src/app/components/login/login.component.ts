@@ -64,10 +64,10 @@ export class LoginComponent implements OnInit, OnDestroy, AfterViewInit {
   ) {}
 
   public ngOnInit(): void {
-    this.titleService.setTitle('SMM - Login');
+    this.titleService.setTitle('Company - Login');
     this.metaTagService.updateTag({
       name: 'description',
-      content: 'Spectrum Media Manager - Login Screen',
+      content: 'Company - Login Screen',
     });
     this.metaTagService.updateTag({
       name: 'robots',
