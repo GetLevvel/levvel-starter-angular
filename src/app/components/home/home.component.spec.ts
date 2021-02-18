@@ -2,11 +2,14 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
   beforeEach(async(() => {
+    const activatedRouteStub = () => ({
+      data: { pipe: () => ({ subscribe: (f) => f({}) }) },
+    });
     const routerStub = () => ({
       events: {
         pipe: () => ({ subscribe: (f) => f({}) }),
@@ -22,6 +25,7 @@ describe('HomeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
       providers: [
+        { provide: ActivatedRoute, useFactory: activatedRouteStub },
         { provide: MatDialog, useFactory: matDialogStub },
         {
           provide: Router,

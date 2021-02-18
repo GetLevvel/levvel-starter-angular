@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
-import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -18,6 +18,7 @@ import {
   AuthenticationService,
   LogoutPopupComponent,
 } from './services/authentication.service';
+import { HttpService } from './services/http.service';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -25,16 +26,16 @@ import {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     FlexLayoutModule,
     HttpClientModule,
     MatButtonModule,
-    MatChipsModule,
     MatDialogModule,
     RoutingModule,
     MatProgressBarModule,
     MatSnackBarModule,
     RoutingModule,
   ],
-  providers: [AppGuard, LoginGuard, AuthenticationService],
+  providers: [AppGuard, LoginGuard, AuthenticationService, HttpService],
 })
 export class AppModule {}

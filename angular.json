@@ -101,5 +101,10 @@
       }
     }
   },
-  "defaultProject": "levvel-starter-angular"
+  "defaultProject": "levvel-starter-angular",
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
+  }
 }
