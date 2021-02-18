@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
 
+## Features
+
+Example Components imported via lazy loaded modules
+Example Http service should cover most use cases
+Example Login and Logout service plus boot controller
+Example Resolver
+Example Dialog
+Example unit tests
+Example cypress tests
+SCSS enabled
+Destroys observables during ngOnDestoy lifecycle call - Use `.pipe(takeUntil())`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -16,11 +28,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` to execute the unit tests via [Jest](https://jestjs.io/).
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng e2e` to execute the end-to-end tests via [Cypress](https://www.cypress.io//).
 
 ## Further help
 
