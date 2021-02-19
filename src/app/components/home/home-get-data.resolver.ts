@@ -7,6 +7,7 @@ export class HomeGetDataResolver implements Resolve<any> {
   constructor() {}
 
   public resolve(): Observable<any> {
+    // return this.userService.searchUsers(<ISearchUsersQuery>{ userIds: null });
     return of(<any>{});
   }
 }

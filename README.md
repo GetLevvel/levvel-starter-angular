@@ -1,4 +1,4 @@
-# LevvelStarterAngular
+# Levvel Starter Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.12.
 
@@ -20,7 +20,7 @@ Example cypress tests
 
 SCSS enabled
 
-Destroys observables during ngOnDestoy lifecycle call - Use `.pipe(takeUntil())`
+Destroys subscriptions during ngOnDestoy lifecycle call - Use `.pipe(takeUntil())`
 
 ## Development server
 

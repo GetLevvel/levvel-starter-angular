@@ -8,13 +8,6 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication.service';
 import { LoginComponent, MyErrorStateMatcher } from './login.component';
-import {
-  IAuthenticateUserQuery,
-  SerializableException,
-  IAuthenticateResponse,
-} from 'src/app/models/servicemodels';
-import { takeUntil } from 'rxjs/operators';
-import { HttpErrorResponse } from '@angular/common/http';
 import { FormControl, Form, FormGroupDirective } from '@angular/forms';
 
 describe('LoginComponent', () => {
@@ -30,9 +23,6 @@ describe('LoginComponent', () => {
       login: (iAuthenticateUserQuery) => ({
         pipe: () => ({ subscribe: (f) => f({}) }),
       }),
-    });
-    const helperServiceStub = () => ({
-      toggleLoading: { next: () => ({}), value: {} },
     });
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
