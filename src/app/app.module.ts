@@ -1,41 +1,16 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { LogoutDialog } from './components/dialogs/logout-dialog/logout-dialog.component';
-import { AppGuard } from './app.guard';
-import { LoginGuard } from './components/login/login.guard';
-import { RoutingModule } from './app.routing';
-import {
-  AuthenticationService,
-  LogoutPopupComponent,
-} from './services/authentication.service';
-import { HttpService } from './services/http.service';
 
 @NgModule({
-  bootstrap: [AppComponent],
-  declarations: [AppComponent, LogoutDialog, LogoutPopupComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    CommonModule,
-    FlexLayoutModule,
-    HttpClientModule,
-    MatButtonModule,
-    MatDialogModule,
-    RoutingModule,
-    MatProgressBarModule,
-    MatSnackBarModule,
-    RoutingModule,
+  declarations: [
+    AppComponent
   ],
-  providers: [AppGuard, LoginGuard, AuthenticationService, HttpService],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

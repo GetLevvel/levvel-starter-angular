@@ -2,7 +2,6 @@
 
 # compiled output
 /dist
-/dist-server
 /tmp
 /out-tsc
 # Only exists if Bazel was run
@@ -36,10 +35,6 @@ speed-measure-plugin*.json
 /.sass-cache
 /connect.lock
 /coverage
-/cypress/downloads
-/cypress/screenshots
-/cypress/reports
-/cypress/videos
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
