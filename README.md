@@ -20,7 +20,7 @@ Run `npm run test | npm run test:watch | npm run test:ci` to execute the unit te
 
 ## Running end-to-end tests
 
-Run `npm run cypress:open | npm run cypress:run` to execute the end-to-end tests via [Cypress](http://www.protractortest.org/).
+Run `npm run cypress:open | npm run cypress:run` to execute the end-to-end tests via [Cypress](https://www.cypress.io/).
 
 ## Further help
 
