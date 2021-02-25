@@ -54,7 +54,6 @@
   },
   "eslintConfig": {
     "ignorePatterns": [
-      "projects/**/*",
       "index.html"
     ],
     "overrides": [
@@ -71,7 +70,7 @@
         "extends": [
           "plugin:@angular-eslint/recommended",
           "plugin:@angular-eslint/template/process-inline-templates",
-          "plugin:prettier/recommended"
+          "prettier"
         ],
         "rules": {
           "@angular-eslint/directive-selector": [
@@ -98,14 +97,23 @@
         ],
         "extends": [
           "plugin:@angular-eslint/template/recommended",
-          "plugin:prettier/recommended"
+          "prettier"
         ],
         "rules": {}
       }
     ]
   },
   "prettier": {
-    "singleQuote": true
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "trailingComma": "es5",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "lf"
   },
   "browserslist": {
     "production": [
