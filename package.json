@@ -6,8 +6,11 @@
     "build": "ng build",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "lint": "eslint **/*.{ts,html} --color --ignore-path .gitignore --fix",
+    "eslint": "eslint **/*.{js,ts,html} --color --ignore-path .gitignore --fix",
+    "lint": "npm run eslint && npm run prettier",
+    "prettier": "prettier **/*.{js,ts,scss,css} --ignore-path .gitignore --write",
     "start": "ng serve",
+    "stylelint": "stylelint **/*.{css,scss} --color --ignore-path .gitignore --fix",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci"
@@ -28,7 +31,6 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.1",
-    "@angular-eslint/builder": "1.2.0",
     "@angular-eslint/eslint-plugin": "1.2.0",
     "@angular-eslint/eslint-plugin-template": "1.2.0",
     "@angular-eslint/schematics": "1.2.0",
@@ -41,16 +43,34 @@
     "@typescript-eslint/parser": "4.3.0",
     "cypress": "^6.5.0",
     "eslint": "^7.6.0",
-    "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
     "eslint-plugin-prefer-arrow": "1.2.2",
     "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^5.1.1",
     "jest": "^26.6.3",
     "jest-preset-angular": "^8.3.2",
     "prettier": "^2.2.1",
+    "stylelint": "^13.11.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.19.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.1.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "eslintConfig": {
     "ignorePatterns": [
@@ -103,6 +123,12 @@
       }
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
+  },
   "prettier": {
     "printWidth": 80,
     "tabWidth": 2,
@@ -115,16 +141,18 @@
     "arrowParens": "always",
     "endOfLine": "lf"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+  "stylelint": {
+    "extends": [
+      "stylelint-config-recommended",
+      "stylelint-config-recommended-scss",
+      "stylelint-config-prettier"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "plugins": [
+      "stylelint-scss",
+      "stylelint-prettier"
+    ],
+    "rules": {
+      "prettier/prettier": true
+    }
   }
 }
