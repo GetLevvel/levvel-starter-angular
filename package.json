@@ -13,7 +13,9 @@
     "stylelint": "stylelint **/*.{css,scss} --color --ignore-path .gitignore --fix",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "postinstall": "husky install",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -73,6 +75,10 @@
     ]
   },
   "eslintConfig": {
+    "env": {
+      "es6": true,
+      "browser": true
+    },
     "ignorePatterns": [
       "index.html"
     ],
