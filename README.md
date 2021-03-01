@@ -28,7 +28,7 @@ Run `npm run lint = npm run eslint && npm run prettier` to run linters via [ESLi
 
 ## Committing and Pushing
 
-Run `git add .`
+Run `git add .` to stage all file changes in git.
 
 Run `npm run commit` to enforce writing descriptive commits via [Commitizen](https://commitizen-tools.github.io/commitizen) and [Husky](https://typicode.github.io/husky) runs `npm run lint` pre-commit.
 
