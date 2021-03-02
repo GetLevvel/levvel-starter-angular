@@ -5,10 +5,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Features:
 
 Lazy-loaded component modules
+
 SCSS enabled
+
 dotenv + yargs for on the fly enviornment creation
+
 Husky
+
 Browserslists
+
+Commitizen
 
 ## Development server
 
