@@ -124,6 +124,11 @@ svg#rocket-smoke {
   z-index: -10;
 }
 
+footer .footer-link {
+  display: flex;
+  align-items: center;
+}
+
 a,
 a:visited,
 a:hover {
@@ -193,11 +198,6 @@ footer {
   display: flex;
   align-items: center;
   line-height: 20px;
-}
-
-footer a {
-  display: flex;
-  align-items: center;
 }
 
 .github-star-badge {

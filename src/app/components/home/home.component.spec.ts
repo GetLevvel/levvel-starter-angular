@@ -1,12 +1,15 @@
 /// <reference types="jest" />
 
-import { TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HomeComponent } from './home.component';
 
 describe('HomeComponent', () => {
-  beforeEach(async(() => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
+
+  beforeEach(async () => {
     const metaStub = () => ({ updateTag: (object) => ({}) });
     const titleStub = () => ({ setTitle: (string) => ({}) });
     const activatedRouteStub = () => ({
@@ -39,18 +42,17 @@ describe('HomeComponent', () => {
         },
       ],
     }).compileComponents();
-  }));
+
+    fixture = TestBed.createComponent(HomeComponent);
+    component = fixture.componentInstance;
+  });
 
   it('should create the home', () => {
-    const fixture = TestBed.createComponent(HomeComponent);
-    const home = fixture.componentInstance;
-    expect(home).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
   it(`should have as title 'levvel-starter-angular'`, () => {
-    const fixture = TestBed.createComponent(HomeComponent);
-    const home = fixture.componentInstance;
-    expect(home.title).toEqual('levvel-starter-angular');
+    expect(component.title).toEqual('levvel-starter-angular');
   });
 
   // it('should render title', () => {
@@ -61,4 +63,14 @@ describe('HomeComponent', () => {
   //     'levvel-starter-angular home is running!'
   //   );
   // });
+
+  it('should call methods', () => {
+    const metaStub: Meta = TestBed.inject(Meta);
+    const titleStub: Title = TestBed.inject(Title);
+    jest.spyOn(titleStub, 'setTitle').getMockImplementation();
+    jest.spyOn(metaStub, 'updateTag').getMockImplementation();
+    component.ngOnInit();
+    expect(metaStub.updateTag).toHaveBeenCalledTimes(2);
+    expect(titleStub.setTitle).toHaveBeenCalledTimes(1);
+  });
 });

@@ -16,15 +16,19 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `npm run test | npm run test:watch | npm run test:ci` to execute the unit tests via [Jest](https://jestjs.io).
+Run `npm run jest | npm run jest:watch | npm run jest:ci` to execute the unit tests via [Jest](https://jestjs.io).
 
 ## Running end-to-end tests
 
 Run `npm run cypress:open | npm run cypress:run` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
 
+## Running all tests
+
+Run `npm run test = npm run jest && npm run cypress:run` to execute unit and end-to-end tests with [Jest](https://jestjs.io) and [Cypress](https://www.cypress.io).
+
 ## Running linters
 
-Run `npm run lint = npm run eslint && npm run prettier` to run linters via [ESLint](https://eslint.org) and [Prettier](https://prettier.io).
+Run `npm run lint = npm run eslint && npm run prettier && npm run stylelint` to run linters via [ESLint](https://eslint.org), [Prettier](https://prettier.io), and [Stylelint](https://stylelint.io).
 
 ## Committing and Pushing
 

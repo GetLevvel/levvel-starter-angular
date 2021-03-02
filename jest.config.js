@@ -12,4 +12,20 @@ module.exports = {
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths || {}, {
     prefix: '<rootDir>/',
   }),
+  collectCoverageFrom: [
+    'src/**/*.ts',
+    '!src/app/app.routing.ts',
+    '!src/environments/**',
+    '!src/main.ts',
+    '!src/polyfills.ts',
+    '!src/app/app.routing.ts',
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 70,
+      functions: 70,
+      lines: 70,
+      statements: 70,
+    },
+  },
 };
