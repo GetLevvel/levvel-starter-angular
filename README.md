@@ -14,7 +14,7 @@ Husky
 
 Browserslists
 
-Commitizen
+Commitizen + commitlint
 
 ## Development server
 
