@@ -2,6 +2,14 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 
+## Features:
+
+Lazy-loaded component modules
+SCSS enabled
+dotenv + yargs for on the fly enviornment creation
+Husky
+Browserslists
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
