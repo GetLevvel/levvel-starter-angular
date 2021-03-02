@@ -8,7 +8,7 @@ Lazy-loaded component modules
 
 SCSS enabled
 
-dotenv + yargs for on the fly enviornment creation
+dotenv + yargs for on the fly environment creation
 
 Husky
 
