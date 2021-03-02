@@ -3,14 +3,16 @@
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",
-    "build": "ng build",
+    "build": "npm run config -- --environment=prod && ng build",
     "commit": "cz",
+    "config": "ts-node ./scripts/setenv.ts",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "eslint": "eslint **/*.{html,js,ts} --color --ignore-path .gitignore --fix",
     "lint": "npm run eslint && npm run prettier",
     "prettier": "prettier **/*.{css,html,js,scss,ts} --ignore-path .gitignore --write",
-    "start": "ng serve",
+    "start": "npm run config -- --environment=dev && ng serve",
+    "start-prod": "npm run config -- --environment=prod && ng serve",
     "stylelint": "stylelint **/*.{css,scss} --color --ignore-path .gitignore --fix",
     "test": "jest --detectOpenHandles && npm run cypress:run",
     "test:watch": "jest --watch",
@@ -45,6 +47,7 @@
     "@typescript-eslint/parser": "4.3.0",
     "cypress": "^6.5.0",
     "cz-conventional-changelog": "^3.3.0",
+    "dotenv": "^8.2.0",
     "eslint": "^7.6.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "30.7.6",
@@ -61,7 +64,8 @@
     "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.19.0",
     "ts-node": "~8.3.0",
-    "typescript": "~4.1.2"
+    "typescript": "~4.1.2",
+    "yargs": "^16.2.0"
   },
   "browserslist": {
     "production": [
