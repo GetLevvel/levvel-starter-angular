@@ -6,10 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - Lazy-loaded component modules
 - SCSS enabled
-- dotenv + yargs for on the fly environment creation
-- Husky
-- Browserslist
-- Commitizen + commitlint
+- [dotenv](https://github.com/motdotla/dotenv) + [yargs](http://yargs.js.org) for on the fly environment creation
+- [Husky](https://typicode.github.io/husky)
+- [Browserslist](https://github.com/browserslist/browserslist)
+- [Commitizen](https://commitizen-tools.github.io/commitizen) + [Commitlint](https://commitlint.js.org)
 - Asynchronous NPM scripts with [Concurrently](https://github.com/kimmobrunfeldt/concurrently).
 
 ## Development server
@@ -34,7 +34,7 @@ Run `npm run cypress:open | npm run cypress:run` to execute the end-to-end tests
 
 ## Running all tests
 
-Run `npm run test = npm run jest && npm run cypress:run` to execute unit and end-to-end tests with [Jest](https://jestjs.io) and [Cypress](https://www.cypress.io).
+Run `npm run test = npm run jest && npm run cypress:run` to execute unit and end-to-end tests via [Jest](https://jestjs.io) and [Cypress](https://www.cypress.io).
 
 ## Running linters
 
@@ -44,9 +44,9 @@ Run `npm run lint = npm run eslint && npm run prettier && npm run stylelint` to 
 
 Run `git add .` to stage all file changes in git.
 
-Run `npm run commit` to enforce writing descriptive commits via [Commitizen](https://commitizen-tools.github.io/commitizen) and [Husky](https://typicode.github.io/husky) runs `npm run lint` pre-commit.
+Run `npm run commit` to enforce writing descriptive commits via [Commitizen](https://commitizen-tools.github.io/commitizen), [Commitlint](https://commitlint.js.org) and [Husky](https://typicode.github.io/husky) runs `npm run lint` pre-commit.
 
-Run `git push` to enforce unit and E2E testing via [Husky](https://typicode.github.io/husky) runs `npm run test` pre-push.
+Run `git push` to enforce unit testing via [Husky](https://typicode.github.io/husky) runs `npm run jest` pre-push.
 
 ## Further help
 
