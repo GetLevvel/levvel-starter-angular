@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - SCSS enabled
 - dotenv + yargs for on the fly environment creation
 - Husky
-- Browserslists
+- Browserslist
 - Commitizen + commitlint
 - Asynchronous NPM scripts with [Concurrently](https://github.com/kimmobrunfeldt/concurrently).
 
