@@ -4,17 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Features:
 
-Lazy-loaded component modules
-
-SCSS enabled
-
-dotenv + yargs for on the fly environment creation
-
-Husky
-
-Browserslists
-
-Commitizen + commitlint
+- Lazy-loaded component modules
+- SCSS enabled
+- dotenv + yargs for on the fly environment creation
+- Husky
+- Browserslists
+- Commitizen + commitlint
+- Asynchronous NPM scripts with [Concurrently](https://github.com/kimmobrunfeldt/concurrently).
 
 ## Development server
 
