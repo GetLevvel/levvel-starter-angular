@@ -14,7 +14,6 @@ module.exports = {
   }),
   collectCoverageFrom: [
     'src/**/*.ts',
-    '!src/app/app.routing.ts',
     '!src/environments/**',
     '!src/main.ts',
     '!src/polyfills.ts',
