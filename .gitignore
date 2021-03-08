@@ -37,7 +37,7 @@ speed-measure-plugin*.json
 # misc
 /.sass-cache
 /connect.lock
-/coverage
+/coverage/
 /cypress/downloads
 /cypress/screenshots
 /cypress/reports
