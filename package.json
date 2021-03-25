@@ -49,6 +49,7 @@
     "@types/node": "^14.14.36",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
+    "commitizen": "^4.2.3",
     "concurrently": "^6.0.0",
     "cypress": "^6.8.0",
     "cz-conventional-changelog": "^3.3.0",
@@ -164,6 +165,19 @@
     "rules": {
       "prettier/prettier": true
     }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --color --fix",
+      "prettier --write"
+    ],
+    "*.{scss,css}": [
+      "stylelint --color --fix",
+      "prettier --write"
+    ],
+    "*.html": [
+      "prettier --write"
+    ]
   },
   "config": {
     "commitizen": {
