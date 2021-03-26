@@ -8,15 +8,15 @@
     "config": "ts-node ./scripts/setenv.ts",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "eslint": "eslint **/*.{html,js,ts} --color --ignore-path .gitignore --fix",
+    "eslint": "eslint \"**/*.{html,js,ts}\" --color --ignore-path .gitignore --fix",
     "jest": "jest --detectOpenHandles",
     "jest:ci": "jest --ci",
     "jest:watch": "jest --watch",
     "lint": "concurrently \"npm run eslint\" \"npm run stylelint\" && npm run prettier",
-    "prettier": "prettier **/*.{css,html,js,scss,ts} --ignore-path .gitignore --write",
+    "prettier": "prettier \"**/*.{css,html,js,scss,ts}\" --ignore-path .gitignore --write",
     "start": "npm run config -- --environment=dev && ng serve",
     "start-prod": "npm run config -- --environment=prod && ng serve",
-    "stylelint": "stylelint **/*.{css,scss} --color --ignore-path .gitignore --fix",
+    "stylelint": "stylelint \"**/*.{css,scss}\" --color --ignore-path .gitignore --fix",
     "test": "concurrently \"npm run jest\" \"npm run cypress:run\"",
     "postinstall": "husky install"
   },
@@ -55,6 +55,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsdoc": "^32.3.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
@@ -113,6 +114,9 @@
           "plugin:@angular-eslint/template/process-inline-templates",
           "prettier"
         ],
+        "plugins": [
+          "prettier"
+        ],
         "rules": {
           "@angular-eslint/directive-selector": [
             "error",
@@ -129,7 +133,8 @@
               "prefix": "app",
               "style": "kebab-case"
             }
-          ]
+          ],
+          "prettier/prettier": "error"
         }
       },
       {
@@ -140,7 +145,12 @@
           "plugin:@angular-eslint/template/recommended",
           "prettier"
         ],
-        "rules": {}
+        "plugins": [
+          "prettier"
+        ],
+        "rules": {
+          "prettier/prettier": "error"
+        }
       }
     ]
   },
